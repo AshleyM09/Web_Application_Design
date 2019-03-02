@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="index.css">
+</head>
+<header>
+  <h1>Calculator<h1>
+</header>
+<body>
+  <div style="overflow:auto">
+    <div class="menu">
+  <ul>
+    <li class="PortMenu">Portfolio Menu:</li>
+    <li><a background-color="#111" color="#e5e5e5" href="http://kahuna.clayton.edu/itfn2214-class/amains/ERD/">ER Diagram</a></li>
+    <li><a background-color="#111" color="#e5e5e5" href="http://kahuna.clayton.edu/itfn2214-class/amains/feedback/index.html">Feedback Web App</a></li>
+    <li><a background-color="#111" color="#e5e5e5" href="http://kahuna.clayton.edu/itfn2214-class/amains/calc/">Calculator Web App</a></li>
+    <li><a background-color="#111" color="#e5e5e5" href="http://kahuna.clayton.edu/itfn2214-class/amains/office/">Office Supplies ER Diagram</a></li>
+    <li><a background-color="#111" color="#e5e5e5" href="http://kahuna.clayton.edu/itfn2214-class/amains/emp/">Employee Database</a></li>
+  </ul>
+    </div>
+<div class="main">
+  <p style="text-size= 4vw">This is a Basic Calculator</p>
+  <script>
+    function confirmA(){
+      var a = document.forms["calcForm"]["aname"].value;
+      var op = document.forms["calcForm"]["operand"].value;
+      var b = document.forms["calcForm"]["bname"].value;
+      if(a == ""){
+        alert("A number must be entered.");
+        return false;
+      }
+    }
+  </script>
+  <form action= "calc.php" name="calcForm" onsubmit="return confirmA()" method="post">
+    A: <input type="number" name="aname">
+    <select name="operand">
+        <option value="Select">Select</option>
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    B: <input type="number" name="bname">
+    <input type="submit" value="Calculate" >
+  </form>
+</div>
+<div class="right">
+  <p style="font-size:3vw;"></p>
+</div>
+</body>
+</html>

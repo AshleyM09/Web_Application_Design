@@ -1,0 +1,44 @@
+  <form action= "pullassgn.php" name="pullAssgnForm" method="post">
+    Select Course:<br />
+    <input type="submit" value="Generate courses" >
+  </form>
+
+  echo <<<BEGINNINGTABLE
+  <table>
+    <tr>
+      <th>Course ID </th>
+      <th>Course Name</th>
+    </tr>
+  BEGINNINGTABLE;
+  #Loop for Course ID list
+  foreach ($crse as $oneRow) {
+  #First column
+  echo <<<ONEROW
+  <tr>
+    <td>
+  ONEROW;
+    print ("$oneRow[Course_Id]");
+  #Second Column
+    echo <<<SECONDCOL
+    </td>
+    <td>
+  SECONDCOL;
+  #Display Course Name Column
+    print ("$oneRow[Course_Name]");
+    echo <<<DATA
+    </td>
+  </tr>
+  <tr>
+    <td>
+  DATA;
+  }
+
+  #HTML for end of table
+  echo <<<ENDTABLE
+      </td>
+    </tr>
+  </table>
+  ENDTABLE;
+
+
+  <link rel="stylesheet" href="index.css">
